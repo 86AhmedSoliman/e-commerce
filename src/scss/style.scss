@@ -1,0 +1,100 @@
+@import "./variables";
+@import "./custom-table";
+@import "./mixins";
+@import "./slider";
+@import "./custom.scss";
+
+.custom-form-control,
+.custom-btn {
+    border: 1px solid #ebebeb;
+    box-shadow: none;
+    border-radius: 2px;
+    font-size: 14px;
+    transition: all ease 0.3s;
+    padding: 6px 13px;
+    color: #868686;
+}
+.custom-navbar .container .custom-form-control:focus {
+    border-color: $btn-danger-color-dark;
+    box-shadow: 0 0 2px 0 $btn-danger-color-dark;
+}
+.custom-btn:hover {
+    background-color: #d4d4d4;
+    border: 1px solid #8c8c8c;
+    color: $btn-primary-color-dark;
+}
+.custom-btn-primary {
+    @include button-style($brand-primary);
+}
+.custom-btn-primary2 {
+    color: #000;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+        background-color: $btn-primary-color-dark;
+        border-color: $btn-primary-color-dark;
+        color: #000;
+    }
+}
+.custom-btn-danger {
+    @include button-style($brand-danger);
+}
+.sale{
+    background-color: #53ccd7;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    &.large{
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        left: -15px;
+        top: -15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-25deg);
+        font-size: 130%;
+        padding: 35px;
+        line-height: 90%;
+        flex-direction: column;
+        span{
+            font-size: 14px;
+        }
+    }
+}
+@media (max-width: 390px){
+    .container-fluid{
+        overflow: hidden;
+        .container{
+            margin: 0 !important;
+            padding: 0 !important;
+            ol.breadcrumb{
+                margin-right: 5px;
+            }
+            .custom-table{
+                    td{
+                        padding: 5px !important;
+                        font-size: 100%;
+                        .media{
+                            .media-body{
+                                h4{
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                    th{
+                        padding: 10px !important;
+                        font-size: 100%;
+                    }
+            }
+        }
+    }
+    
+}
